@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FilmCard from "../../components/FilmCard";
+// import filmsFromData from "../../data/data"
 
 const Films = () => {
 
@@ -13,10 +14,10 @@ const Films = () => {
       .then(result => result.json())
       .then(result => {
         fetchedFilms = result;
-        // console.log(result);
-        // console.log(fetchedFilms);
+        console.log(result);
+        console.log(fetchedFilms.Search);
 
-        updateFilms(fetchedFilms);
+        updateFilms(fetchedFilms.Search);
       })
       .catch(error => console.log(error))
 }, []);
@@ -24,9 +25,9 @@ const Films = () => {
 
 
   // MAP through
-  const printFilms = currentFilms.map(film => {
+  const printFilms = currentFilms.map(filmObj => {
     return (
-      <FilmCard film={film}  />
+      <FilmCard filmObj={filmObj}  />
     );
   });
 

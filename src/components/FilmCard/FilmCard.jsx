@@ -1,14 +1,15 @@
 import React from "react";
+import styles from "./FilmCard.css";
+
 
 const FilmCard = props => {
 
-  const {film} = props;
-
+  const {filmObj} = props;
 
   return (
-    <div>
-        <h3>{film.Title}</h3>
-        <p>{film.Year}</p>
+    <div className={styles.filmCard}>
+        <h3>{filmObj.Title}</h3>
+        <p>{filmObj.Year}</p>
     </div>
   );
 };
