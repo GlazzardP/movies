@@ -1,30 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import FilmCard from "../../components/FilmCard";
 // import filmsFromData from "../../data/data"
 
-const Films = () => {
+const Films = (props) => {
 
-  const [currentFilms, updateFilms] = useState([]);
-
-  let fetchedFilms;
-
-  useEffect(() => {
-    fetch("http://www.omdbapi.com/?s=indiana&apikey=ebaeda17"
-    )
-      .then(result => result.json())
-      .then(result => {
-        fetchedFilms = result;
-        console.log(result);
-        console.log(fetchedFilms.Search);
-
-        updateFilms(fetchedFilms.Search);
-      })
-      .catch(error => console.log(error))
-}, []);
+  const { currentFilms} = props;
 
 
 
-  // MAP through
+//   useEffect(() => {
+//     fetch(`http://www.omdbapi.com/?s=${setSearchText}&apikey=ebaeda17`
+//     )
+//       .then(result => result.json())
+//       .then(result => {
+//         fetchedFilms = result;
+//         console.log(result);
+//         console.log(fetchedFilms.Search);
+
+//         updateFilms(fetchedFilms.Search);
+//       })
+//       .catch(error => console.log(error))
+// }, []);
+
+
   const printFilms = currentFilms.map(filmObj => {
     return (
       <FilmCard filmObj={filmObj}  />
