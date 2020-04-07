@@ -23,7 +23,7 @@ const Films = (props) => {
 // }, []);
 
 
-  const printFilms = currentFilms.map(filmObj => {
+  const printFilms={() => currentFilms.map(filmObj => {
     return (
       <FilmCard filmObj={filmObj}  />
     );
