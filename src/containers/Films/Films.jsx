@@ -6,8 +6,6 @@ const Films = (props) => {
 
   const { currentFilms} = props;
 
-
-
 //   useEffect(() => {
 //     fetch(`http://www.omdbapi.com/?s=${setSearchText}&apikey=ebaeda17`
 //     )
@@ -23,7 +21,7 @@ const Films = (props) => {
 // }, []);
 
 
-  const printFilms={() => currentFilms.map(filmObj => {
+  const printFilms= () => currentFilms.map(filmObj => {
     return (
       <FilmCard filmObj={filmObj}  />
     );
